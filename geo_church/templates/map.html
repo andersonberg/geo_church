@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block map %}
+
+    {% load easy_maps_tags %}
+    <!-- Default map with 300x400 dimensions -->
+    {% easy_map "Brasil, Recife, Rua da Aurora 1035" 1140 400 %}
+
+{% endblock map %}

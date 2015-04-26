@@ -1,0 +1,118 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}geo_church{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- This file store project specific CSS -->
+    <link href="{% static 'css/geo_church.css' %}" rel="stylesheet">
+      <link href="{% static 'css/page_contact.css' %}" rel="stylesheet">
+
+    <!-- Use this to quickly test CSS changes in a template,
+        then move to geo_church.css -->
+    {% block extra_css %}{% endblock extra_css %}
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">geo_church</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container">
+
+      <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
+
+      {% block content %}
+        <p>Use this document as a way to quick start any new project.</p>
+
+        <select class="js-example-placeholder-single form-control js-example-events">
+            <option value="AL">Alabama</option>
+            <option value="PE">Pernambuco</option>
+        </select>
+        <div>
+
+        </div>
+        <!-- Google Map -->
+        <!--<div id="map" class="map">
+        </div>--><!---/map-->
+        <!-- End Google Map -->
+
+        {% block map %}
+
+        {% endblock map %}
+
+      {% endblock content %}
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+    <!-- place project specific Javascript in this file -->
+    <script src="{% static 'js/geo_church.js' %}"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/gmap/gmap.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/page_contacts.js' %}"></script>
+    <script type="text/javascript">
+        $('select').select2();
+        jQuery(document).ready(function() {
+            $(".js-example-placehoder-single").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+            ContactPage.initMap();
+
+            var $eventSelect = $(".js-example-events");
+            $eventSelect.on("select2:select", function (e) {
+                $.ajax({
+                    type: 'POST',
+                    url: '{% url 'map_page' %}',
+                    success: function(){alert('DONE!');},
+                    error:function(){alert('ERROR!');},
+                });
+            });
+        });
+</script>
+
+    {% block extra_js %}{% endblock extra_js %}
+  </body>
+</html>
