@@ -58,12 +58,18 @@
       <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
 
-        <select class="js-example-placeholder-single form-control js-example-events">
-            <option value="AL">Alabama</option>
-            <option value="PE">Pernambuco</option>
-        </select>
+        <div class="row">
+            <div class="col-md-6 md-margin-bottom-40">
+                <select class="js-example-placeholder-single form-control js-example-events">
+                    <option value="AL">Alabama</option>
+                    <option value="PE">Pernambuco</option>
+                </select>
+            </div>
+            <div class="col-md-6 md-margin-bottom-40">
+            </div>
+        </div>
+
         <div>
 
         </div>
