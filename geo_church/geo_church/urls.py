@@ -8,7 +8,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^$', 'maps.views.home', name='home'),
     url(r'^map/', 'maps.views.map_page', name='map_page'),
 
     # Examples:

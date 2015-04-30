@@ -41,11 +41,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">geo_church</a>
+          <a class="navbar-brand" href="{% url 'home' %}">Geo Church</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li class="active"><a href="{% url 'home' %}">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -55,16 +55,21 @@
 
     <div class="container">
 
-      <h1>{% block page_title %}Example Base Template{% endblock page_title %}</h1>
+      <h1>{% block page_title %}Aonde está minha igreja?{% endblock page_title %}</h1>
 
       {% block content %}
 
         <div class="row">
             <div class="col-md-6 md-margin-bottom-40">
-                <select class="js-example-placeholder-single form-control js-example-events">
-                    <option value="AL">Alabama</option>
-                    <option value="PE">Pernambuco</option>
-                </select>
+                <form action="{% url 'map_page' %}" method="post">
+                    {% csrf_token %}
+                    <select class="js-example-placeholder-single form-control" name="address">
+                        {% for church in igrejas %}
+                        <option value="{{ church.address }}">{{ church.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Go" />
+                </form>
             </div>
             <div class="col-md-6 md-margin-bottom-40">
             </div>
@@ -94,30 +99,34 @@
 
     <!-- place project specific Javascript in this file -->
     <script src="{% static 'js/geo_church.js' %}"></script>
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/gmap/gmap.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/page_contacts.js' %}"></script>
+    <!--<script type="text/javascript" src="{% static 'js/gmap/gmap.js' %}"></script>-->
+    <!--<script type="text/javascript" src="{% static 'js/page_contacts.js' %}"></script>-->
     <script type="text/javascript">
         $('select').select2();
         jQuery(document).ready(function() {
             $(".js-example-placehoder-single").select2({
-                placeholder: "Select a state",
+                placeholder: "Selecione uma cidade",
                 allowClear: true
             });
-            ContactPage.initMap();
 
-            var $eventSelect = $(".js-example-events");
-            $eventSelect.on("select2:select", function (e) {
-                $.ajax({
-                    type: 'POST',
-                    url: '{% url 'map_page' %}',
-                    success: function(){alert('DONE!');},
-                    error:function(){alert('ERROR!');},
-                });
-            });
         });
 </script>
+
+    <!--Isto vai após o document ready
+    ContactPage.initMap();
+
+    var $eventSelect = $(".js-example-events");
+    $eventSelect.on("select2:select", function (e) {
+        $.ajax({
+            type: 'POST',
+            csrfmiddlewaretoken: '{{ csrf_token }}',
+            url: '{% url 'map_page' %}',
+            success: function(){alert('DONE!');},
+            error:function(){alert('ERROR!');},
+        });
+    });-->
 
     {% block extra_js %}{% endblock extra_js %}
   </body>
