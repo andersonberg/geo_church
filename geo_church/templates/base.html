@@ -65,7 +65,7 @@
                     {% csrf_token %}
                     <select class="js-example-placeholder-single form-control" name="address">
                         {% for church in igrejas %}
-                        <option value="{{ church.address }}">{{ church.name }}</option>
+                        <option value="{{ church.city }} {{ church.address }}">{{ church.name }}</option>
                         {% endfor %}
                     </select>
                     <button type="submit" class="button btn-u btn-u-default rounded">Go</button>
