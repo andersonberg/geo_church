@@ -30,8 +30,12 @@
           var mapdiv = document.getElementById("map-canvas-{{ map.pk }}");
 
           if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
-            mapdiv.style.width = '360px';
+            mapdiv.style.width = '320px';
             mapdiv.style.height = '400px';
+          }
+          else{
+            mapdiv.style.width = '{{ width }}px';
+            mapdiv.style.height = '{{ height }}px';
           }
         }
 
@@ -39,7 +43,7 @@
             var latlng = new google.maps.LatLng({{ lat }}, {{ long }});
             var mapElem = document.getElementById("map-canvas-{{ map.pk }}");
 
-
+            detectBrowser();
 
             {% block map_options_js %}
             var mapOptions = {
