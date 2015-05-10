@@ -20,13 +20,15 @@ def map_page(request):
     if request.method == 'POST':
         form = MapForm(request.POST)
         if form.is_valid():
-            address = "Brazil " + form.cleaned_data['address']
+            part_address = form.cleaned_data['address']
+            address = "Brazil " + part_address
             church_name = form.cleaned_data['church_name']
 
             dict_template = {'address': address}
             igrejas = Church.objects.all()
             dict_template['igrejas'] = igrejas
             dict_template['church'] = church_name
+            dict_template['part_address'] = part_address
 
     else:
         dict_template = {}
