@@ -68,14 +68,16 @@
             <div class="col-md-6 md-margin-bottom-40">
                 <form action="{% url 'map_page' %}" method="post">
                     {% csrf_token %}
+                    <div class="form-group">
                     <select id="church" class="js-example-placeholder-single form-control" name="address">
                         <option></option>
                         {% for church in igrejas %}
                         <option value="{{ church.city }} {{ church.address }}">{{ church.name }}</option>
                         {% endfor %}
                     </select>
+                    </div>
                     <input type="text" hidden="hidden" name="church_name" id="church_name">
-                    <button type="submit" class="button btn-u btn-u-default rounded">Buscar</button>
+                    <button type="submit" class="btn btn-primary btn-block">Buscar</button>
                 </form>
             </div>
             <div class="col-md-6 md-margin-bottom-40">
