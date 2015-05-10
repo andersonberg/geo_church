@@ -30,8 +30,8 @@
           var mapdiv = document.getElementById("map-canvas-{{ map.pk }}");
 
           if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1 ) {
-            mapdiv.style.width = '320px';
-            mapdiv.style.height = '400px';
+            mapdiv.style.width = '100%';
+            mapdiv.style.height = '350px';
           }
           else{
             mapdiv.style.width = '{{ width }}px';

@@ -2,7 +2,9 @@
 {% load staticfiles %}
 
 {% block map %}
-
+    {% if church %}
+    <h3> {{ church }} </h3>
+    {% endif %}
     {% load easy_maps_tags %}
     <!-- Default map with 300x400 dimensions -->
     {% easy_map address 1140 400 16 using 'map_template.html' %}
