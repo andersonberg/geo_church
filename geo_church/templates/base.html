@@ -26,7 +26,7 @@
 
     <!-- This file store project specific CSS -->
     <link href="{% static 'css/geo_church.css' %}" rel="stylesheet">
-    <link href="{% static 'css/page_contact.css' %}" rel="stylesheet">
+    <!--<link href="{% static 'css/page_contact.css' %}" rel="stylesheet">-->
 
     <!-- Use this to quickly test CSS changes in a template,
         then move to geo_church.css -->
@@ -66,7 +66,7 @@
                 <form action="{% url 'map_page' %}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
-                    <select id="church" class="js-example-placeholder-single form-control" name="address">
+                    <select id="church" class="js-example-placeholder-single form-control" name="address" required="required">
                         <option></option>
                         {% for church in igrejas %}
                         <option value="{{ church.city }} {{ church.address }}">{{ church.name }}</option>
@@ -97,9 +97,9 @@
 
     </div> <!-- /container -->
 
-    <div id="footer" class="navbar-fixed-bottom">
+    <div id="footer">
       <div class="container">
-        <p class="muted credit"></p>
+
       </div>
     </div>
 

@@ -12,7 +12,7 @@
         {% if width and map.latitude and not map.geocode_error %}
         style="width: {{ width }}px; height: {{ height }}px;"
         {% endif %}
-        class="map">
+        >
         {% block noscript %}
         <noscript>
         <img alt="Map of {{ map.address }}" src="https://maps.google.com/maps/api/staticmap?center={{ lat }},{{ long }}&zoom={{ zoom }}&markers={{ lat }},{{ long }}&size={{ width }}x{{ height }}&sensor=false">
