@@ -67,8 +67,8 @@ def populate():
     add_church(name="ALTO DA CONQUISTA 5", city=cidade, address="RUA DA EDUCACAO")
     add_church(name="ALTO DA CONQUISTA 6", city=cidade, address="RUA MONARCA 15")
     add_church(name="CÓRREGO DO ABACATE", city=cidade, address="Rua Córrego do Abacate 160")
-    add_church(name="RESIDÊNCIA DO IRMÃO CABRAL", city=cidade, address="RUA ASTECA 1")
-    add_church(name="RESIDÊNCIA DO IRMÃO JURANDIR", city=cidade, address="RUA QUADRANTE 93")
+    # add_church(name="RESIDÊNCIA DO IRMÃO CABRAL", city=cidade, address="RUA ASTECA 1")
+    # add_church(name="RESIDÊNCIA DO IRMÃO JURANDIR", city=cidade, address="RUA QUADRANTE 93")
 
 
     # Área 04
@@ -120,7 +120,7 @@ def populate():
     add_church(name="RUA HIDROLÂNDIA", city=cidade, address="RUA HIDROLÂNDIA 30")
     add_church(name="PLANALTINA", city=cidade, address="RUA PLANALTINA 129")
     add_church(name="EXPANÇÃO ALTO JOSÉ DO PINHO", city=cidade, address="CORREGO DO BARTOLOMEU 392")
-    add_church(name="2a TRAVESSA BELA VISTA", city=cidade, address="TRAVESSA BELA VISTA 75")
+    add_church(name="2ª TRAVESSA BELA VISTA", city=cidade, address="TRAVESSA BELA VISTA 75")
     add_church(name="EXPANSÃO ALTO DA SAUDADE", city=cidade, address="RUA ALTO PARAGUAI 7")
     add_church(name="MONTE SANTO", city=cidade, address="RUA MONTE SANTO 481")
     add_church(name="RUA DA VITÓRIA", city=cidade, address="RUA UNIAO DA VITORIA 144")
