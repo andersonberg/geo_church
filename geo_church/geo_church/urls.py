@@ -10,6 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^$', 'maps.views.home', name='home'),
     url(r'^map/', 'maps.views.map_page', name='map_page'),
+    url(r'^contato/', 'maps.views.contato', name='contato'),
 
     # Examples:
     # url(r'^$', 'geo_church.views.home', name='home'),
@@ -19,7 +20,7 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
+    # url(r'^admin/', include(admin.site.urls)),
 )
 
 # Uncomment the next line to serve media files in dev.
