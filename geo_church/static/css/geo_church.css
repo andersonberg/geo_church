@@ -7,3 +7,15 @@ body{
 .select2-container {
   margin: 0 0 1rem 0;
 }
+
+.google-map{
+    width: 1000px;
+    height: 400px;
+}
+
+@media only screen and (max-width: 40em) {
+    .google-map{
+        width: 100%;
+        height: 350px;
+    }
+}
