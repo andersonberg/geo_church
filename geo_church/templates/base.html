@@ -78,7 +78,7 @@
                                 <select id="church" class="js-example-placeholder-single" name="address" required="required">
                                     <option></option>
                                     {% for church in igrejas %}
-                                        <option value="{{ church.city }} {{ church.address }}">{{ church.name }}</option>
+                                        <option value="{{ church.address }} {{ church.city }} ">{{ church.name }}</option>
                                     {% endfor %}
                                 </select>
                             </div>

@@ -24,7 +24,8 @@ def map_page(request):
         form = MapForm(request.POST)
         if form.is_valid():
             part_address = form.cleaned_data['address']
-            address = "Brazil " + part_address
+            address = part_address + ", Brazil"
+            # address = address.replace(u"\u2060", "")
             church_name = form.cleaned_data['church_name']
 
             dict_template = {'address': address}
@@ -65,3 +66,4 @@ def contato(request):
     }
 
     return render_to_response("contato.html", dict_template, context_instance=RequestContext(request))
+

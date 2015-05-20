@@ -1,3 +1,5 @@
+# -*- encoding:utf-8 -*-
+
 from __future__ import absolute_import
 __author__ = 'andersonberg'
 
@@ -18,7 +20,7 @@ def populate():
     add_church(name="Ilha João de Barros", city=cidade, address="Avenida Governador Agamenon Magalhães 100")
     add_church(name="Jerônimo Vilela", city=cidade, address="Avenida Professor José dos Anjos 80")
     add_church(name="Vila dos Casados", city=cidade, address="Rua Mário Albuquerque Cavalcante")
-    # add_church(name="Benfica", city=cidade, address="")
+    add_church(name="Benfica", city=cidade, address="Rua Clara Basbaum")
     add_church(name="Jerônimo Vilela 2", city=cidade, address="Avenida Professor José dos Anjos 158")
     add_church(name="Sete de Setembro", city=cidade, address="Rua Sete de Setembro 329")
     add_church(name="Rua dos Casados", city=cidade, address="Rua dos Casados 274")
