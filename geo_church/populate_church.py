@@ -135,9 +135,20 @@ def populate():
 
     # Área 07
     cidade = "Recife"
-    # add_church(name="", city=cidade, address="")
-    # add_church(name="", city=cidade, address="")
-    # add_church(name="", city=cidade, address="")
+    add_church(name="Mustardinha", city=cidade, address="RUA JOANA FRANCISCA DE AZEVEDO 58")
+    add_church(name="Novo Prado", city=cidade, address="RUA ISAAC MARKMAN 75")
+    add_church(name="Arsênio Calaça", city=cidade, address="RUA ARSÊNIO CALAÇA 570")
+    add_church(name="Deus Te Guarde", city=cidade, address="RUA JOSELANDIA 120")
+    add_church(name="San Martin", city=cidade, address="RUA MANOEL VIEIRA 96")
+    add_church(name="Sítio Tabaiares", city=cidade, address="RUA JORDANIA 230")
+    add_church(name="Vietnã - San Martin", city=cidade, address="RUA ANTONIO CORREIA DE ARAUJO 80")
+    add_church(name="Vila Nova", city=cidade, address="RUA CORONEL MIZAEL DE MENDONCA 86")
+    add_church(name="Mustardinha 2", city=cidade, address="AVENIDA MANOEL GONCALVES DA LUZ 267")
+    add_church(name="Estrada Dos Remédios", city=cidade, address="RUA COSME VIANA 749")
+    # add_church(name="TV ANTONIO CORREIA DE ARAUJO", city=cidade, address="TV ANTONIO CORREIA DE ARAUJO 60")
+    add_church(name="Novo Prado 2", city=cidade, address="AVENIDA CONSUL VILARES FRAGOSO 36")
+    add_church(name="Rua Major Mario Portela", city=cidade, address="RUA MAJOR MARIO PORTELA 73")
+    add_church(name="Mustardinha Terreno", city=cidade, address="RUA JOAQUINA DA CONCEICAO AZEVEDO 99")
     # add_church(name="", city=cidade, address="")
     # add_church(name="", city=cidade, address="")
     # add_church(name="", city=cidade, address="")
