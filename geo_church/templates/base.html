@@ -13,6 +13,8 @@
     <link href="{% static 'css/foundation.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/footer.css' %}" rel="stylesheet">
     <link href="{% static 'css/select2.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -67,10 +69,10 @@
 
     <div class="row">
         <div class="large-12 columns">
-          {% block content %}
-          <h2>{% block page_title %}Aonde está minha igreja?{% endblock page_title %}</h2>
+            {% block content %}
+            <h2 class="text-center">{% block page_title %}Aonde está minha igreja?{% endblock page_title %}</h2>
             <div class="row">
-                <div class="large-6 columns">
+                <div class="large-6 large-offset-3 columns">
                     <form action="{% url 'map_page' %}" method="post">
                         {% csrf_token %}
                         <div class="row">
@@ -92,10 +94,6 @@
                     </form>
                 </div>
             </div>
-            <!-- Google Map -->
-            <!--<div id="map" class="map">
-            </div>--><!---/map-->
-            <!-- End Google Map -->
 
             <div class="row">
                 <div class="large-12 columns">
@@ -111,9 +109,11 @@
 
     <footer class="row">
         <div class="large-12 columns">
-            <hr>
-            <div class="row">
+            <div class="row text-center">
+                <h4>Encontre sua igreja</h4>
                 <p>Ajude-nos a melhorar nossos serviços, envie-nos correções ou atualizações de endereços. Entre em <a href="{% url 'contato' %}">contato</a>!</p>
+                <hr>
+                <p><small>Copyright © Anderson Berg 2015</small></p>
             </div>
         </div>
     </footer>

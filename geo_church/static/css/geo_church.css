@@ -1,7 +1,12 @@
 /*! project specific CSS goes here. */
 
-body{
-    background-color: #f2f2f2;
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  background-color: #f2f2f2;
+}
+
+footer {
+  padding: 100px 0;
 }
 
 .select2-container {
@@ -19,3 +24,4 @@ body{
         height: 350px;
     }
 }
+
